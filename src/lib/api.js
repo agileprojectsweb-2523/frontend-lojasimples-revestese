@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // 1. Cria uma instância do Axios com a URL base da sua API
 const api = axios.create({
-  baseURL: 'https://doculinka-api.inn2fb.easypanel.host/api',
+  baseURL: 'https://jackbear-backend-apiecommerce-revestese.r954jc.easypanel.host/api',
 });
 
 
@@ -14,12 +14,12 @@ api.interceptors.request.use(
   (config) => {
     // Pega o token de acesso do localStorage
     const token = localStorage.getItem('authToken');
-    
+
     // Se o token existir, adiciona o cabeçalho de autorização
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
-    
+
     // Retorna a configuração modificada para que a requisição prossiga
     return config;
   },
@@ -49,9 +49,9 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem('refreshToken');
         if (!refreshToken) {
-            // Se não houver refresh token, desloga o usuário
-            window.location.href = '/login';
-            return Promise.reject(error);
+          // Se não houver refresh token, desloga o usuário
+          window.location.href = '/login';
+          return Promise.reject(error);
         }
 
         // Faz a chamada para o endpoint de refresh
@@ -74,7 +74,7 @@ api.interceptors.response.use(
         return Promise.reject(refreshError);
       }
     }
-    
+
     // Para qualquer outro erro, apenas o rejeita
     return Promise.reject(error);
   }
