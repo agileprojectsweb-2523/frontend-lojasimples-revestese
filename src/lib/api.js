@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // 1. Cria uma instância do Axios com a URL base da sua API
 const api = axios.create({
-  baseURL: 'https://jackbear-backend-apiecommerce-revestese.r954jc.easypanel.host/api',
+  baseURL: 'https://geral-tiptagapi.r954jc.easypanel.host/api/v1',
 });
 
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'sonner';
 
 const api = axios.create({
-    baseURL: 'https://jackbear-backend-apiecommerce-revestese.r954jc.easypanel.host/api',
+    baseURL: 'https://geral-tiptagapi.r954jc.easypanel.host/api/v1',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
